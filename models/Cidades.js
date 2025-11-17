@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/database.js";
 
-const Especialidades = sequelize.define('Especialidades', {
+const Cidades = sequelize.define('Cidades', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -9,16 +9,15 @@ const Especialidades = sequelize.define('Especialidades', {
   },
   nome: {
     type: DataTypes.STRING,
-    allowNull: false,
-    unique: true
+    allowNull: false
   },
-  descricao: {
-    type: DataTypes.TEXT,
-    allowNull: true
+  estado: {
+    type: DataTypes.STRING(2),
+    allowNull: false
   }
 }, {
-  tableName: 'especialidades',
+  tableName: 'cidades',
   timestamps: true
 });
 
-export default Especialidades;
+export default Cidades;
